@@ -1,0 +1,9 @@
+<nav class="border-bottom-nav navbar navbar-expand-lg">
+  <div class="container-fluid" >
+    <a class="navbar-brand" [routerLink]="['/']"><img style="max-width:200px;" src="../../../../assets/Logo_Mercadona.png"/></a>
+      <form class="d-flex" role="search">
+        <app-navbar-button-login *ngIf="botonVisible"></app-navbar-button-login>
+        <app-nabvar-button-logout *ngIf="!botonVisible"></app-nabvar-button-logout>
+      </form>
+    </div>
+</nav>

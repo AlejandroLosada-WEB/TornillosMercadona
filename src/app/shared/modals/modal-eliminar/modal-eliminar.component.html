@@ -1,0 +1,23 @@
+
+
+  <!--<button id='eliminarButton' type="button" data-bs-toggle="modal" data-bs-target="#eliminar">
+    Boton
+  </button>-->
+  
+  
+  <div class="modal fade" id="eliminar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content rounded-0 modal_eliminar">
+        <div class="modal-header border-0 pb-0">
+          <small class="modal-title" id="exampleModalLabel">Confirmación</small>
+        </div>
+        <div class="modal-body pt-1 fuente_1" style="font-weight:bold;">
+            {{texto}}
+        </div>
+        <div class="modal-footer border-0">
+          <button #botonCerrarModal type="button" class="boton_secundario" data-bs-dismiss="modal">Cancelar</button>
+          <button type="button" (click)="eliminar()"  class="boton_peligro">Eliminar</button>
+        </div>
+      </div>
+    </div>
+  </div>

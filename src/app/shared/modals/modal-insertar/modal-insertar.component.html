@@ -1,0 +1,70 @@
+<!--<button id='insertarButton' type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#insertar">
+    Boton
+  </button>-->
+  
+  
+  <div class="modal fade" id="insertar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" style="max-width:1000px;width:90%;">
+      <div class="modal-content rounded-0 p-4" >
+        <div class="modal-header border-0 pb-0">
+          <h1 class="modal-title" id="exampleModalLabel">Confirmación</h1>
+        </div>
+        <div class="modal-body pt-1 fuente_1" style="font-weight:bold;">
+            
+            <div  *ngIf="!cargando"  class="card rounded-0  border-0 " >
+              <div class="card-body p-0">
+                <form [formGroup]="insertarForm" (ngSubmit)="insertar()">
+                    
+                  <label class="label mb-2">Nombre</label>
+                    <input maxlength="30" type="text"
+                           class="form-control rounded-0 mb-3"
+                           formControlName="name"
+                           placeholder="Nombre">
+        
+                    <label class="label mb-2">Contraseña</label>            
+                    <input maxlength="30" type="text"
+                           class="form-control rounded-0"
+                           formControlName="categoria"
+                           placeholder="Categoria">
+                    
+                    <label class="label mb-2">Nombre proveedor</label>
+                    <input maxlength="30" type="text"
+                            class="form-control rounded-0 mb-3"
+                            formControlName="name_prov"
+                            placeholder="Nombre proveedor">
+               
+                    <label class="label mb-2">Precio proveedor ej (12,12)</label>            
+                    <input maxlength="30" type="text"
+                            class="form-control rounded-0"
+                            formControlName="price_prov"
+                            placeholder="Precio">
+
+                    <label class="label mb-2">Formato</label>            
+                    <input maxlength="30" type="text"
+                            class="form-control rounded-0"
+                            formControlName="format"
+                            placeholder="Formato">
+
+
+                  <div class="d-flex justify-content-center mt-4">
+                      
+                      
+                  </div>          
+                  
+                </form>
+              </div>
+          </div>
+          <mat-spinner *ngIf="cargando" class="custom-spinner"></mat-spinner>
+        </div>
+        <div class="modal-footer border-0">
+          <button type="button" class="boton_secundario" data-bs-dismiss="modal">Cancelar</button>
+          <button data-bs-dismiss="modal" (click)="insertar()" class="boton_primario"
+                style="cursor:pointer;" 
+                type="submit"
+                [disabled]="insertarForm.invalid"
+                *ngIf="!cargando"> Guardar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>

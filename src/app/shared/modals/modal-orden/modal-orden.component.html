@@ -1,0 +1,30 @@
+
+
+  <!--<button id='ordenButton' type="button" data-bs-toggle="modal" data-bs-target="#orden">
+    Boton
+  </button>-->
+  
+  
+  <div class="modal fade" id="orden" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style="z-index:10 !important">
+    <div class="modal-dialog modal-dialog-centered" >
+      <div class="modal-content rounded-0 modal_eliminar">
+        <div class="modal-header border-0 pb-0">
+          <h1 class="modal-title" id="exampleModalLabel">Configurar columnas</h1>
+        </div>
+        <div class="modal-body pt-1 fuente_1" style="font-weight:bold;">
+            <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
+                <ng-container *ngFor="let column of columnas">
+                <div class="example-box" *ngIf="column!='Acciones'" cdkDrag>
+                  <div class="example-custom-placeholder" *cdkDragPlaceholder></div>
+                    {{column}}                
+                </div>
+                </ng-container>
+              </div>
+        </div>
+        <div class="modal-footer border-0">
+          <button #botonCerrarModal type="button" class="boton_secundario" data-bs-dismiss="modal">Cancelar</button>
+          <button (click)="guardar()" data-bs-dismiss="modal" type="button" class="boton_primario">Guardar</button>
+        </div>
+      </div>
+    </div>
+  </div>

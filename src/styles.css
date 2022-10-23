@@ -1,1 +1,75 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0;border:2px solid black; font-family: Roboto, "Helvetica Neue"; font-weight:bold; }
+
+.border-bottom-nav{
+    border-bottom:2px solid #3A7E45;
+}
+
+.color_primario{
+    color:#3A7E45 ;
+    background-color:#3A7E45;
+}
+.boton_primario,.boton_secundario,.boton_peligro{
+    padding:10px 20px;
+    border:none;
+    color:white;
+    font-weight:bold;
+}
+.boton_primario{
+    background-color:#3A7E45;
+}
+.boton_secundario{
+    background-color:#515659;
+}
+.boton_peligro{
+    background-color:#AA2223;
+}
+
+.fuente_1{
+    color:#515659;
+    font-size:16px;
+}
+
+.border-top-footer{
+    border-top:2px solid #3A7E45;
+}
+
+::-webkit-scrollbar {
+    width: 20px;
+}
+  
+::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+   
+
+::-webkit-scrollbar-thumb {
+    background: #3A7E45; 
+}
+  
+::-webkit-scrollbar-thumb:hover {
+    background: #3A7E45; 
+}
+
+textarea:focus, 
+textarea.form-control:focus, 
+input.form-control:focus, 
+input[type=text]:focus, 
+input[type=password]:focus, 
+input[type=email]:focus, 
+input[type=number]:focus, 
+[type=text].form-control:focus, 
+[type=password].form-control:focus, 
+[type=email].form-control:focus, 
+[type=tel].form-control:focus, 
+[contenteditable].form-control:focus {
+  border: 1px solid #ced4da;
+  outline:none;
+  box-shadow: inset 0 -3px 0 #3A7E45;
+}
+
+.modal-backdrop {
+    z-index:6 !important;
+ }

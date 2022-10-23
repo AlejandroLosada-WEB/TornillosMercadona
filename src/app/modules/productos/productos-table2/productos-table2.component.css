@@ -1,0 +1,9 @@
+.tabla_head{
+    background-color:#D6D9DF;
+}
+tr:nth-child(even){
+    background-color:#F2F4F8;
+}
+tr:nth-child(odd){
+    background-color:white;
+} 

@@ -1,0 +1,36 @@
+
+<h1>PRODUCTOS</h1>
+<div class="d-flex justify-content-end w-75">
+  <img style="max-width:25px;cursor:pointer;" src="../../../../assets/configs.JPG" id='ordenButton' type="button" data-bs-toggle="modal" data-bs-target="#orden">
+</div>
+<table mat-table class="table m-4 table_width" style="display: block;height:500px; overflow-y: scroll" [dataSource]="dataSource">
+    <thead>
+      <tr>
+        <th *ngFor="let columna of columnas" class="tabla_head p-3 " scope="col">{{columna}}</th>
+      </tr>
+    </thead>
+    <tbody > 
+      <td style="background-color:#F2F4F8;" *ngFor="let columna of columnas; let i=index;" >
+        <tr style="background-color:#F2F4F8;" class="" *ngFor="let producto of productos" >
+            <th style="max-width:150;width:100%;" height="100" *ngIf="columna=='ID'" class=" p-3 border-0 d-flex justify-content-center align-items-center"  scope="row">{{producto._id}}</th>
+            <td style="max-width:150;width:100%;" height="100" *ngIf="columna=='Nombre'" class="p-3 border-0 d-flex justify-content-center align-items-center">{{producto.name}}</td>
+            <td style="max-width:150;width:100%;" height="100" *ngIf="columna=='Categoria'" class="p-3 border-0 d-flex justify-content-center align-items-center">{{producto.categoria}}</td>
+            <td style="max-width:150;width:100%;" height="100" *ngIf="columna=='Nombre Proovedor'" class="p-3 border-0 d-flex justify-content-center align-items-center">{{producto.name_prov}}</td>
+            <td style="max-width:150;width:100%;" height="100" *ngIf="columna=='Precio Proovedor'" class=" p-3 border-0 d-flex justify-content-center align-items-center">{{producto.price_prov | commaDecimal}} €</td>
+            <td style="max-width:150;width:100%;" height="100" *ngIf="columna=='Formato'" class=" p-3 border-0 d-flex justify-content-center align-items-center">{{producto.format}}</td>
+            <td style="max-width:150;width:100%;" height="100" *ngIf="columna=='Revisado' && producto.revisado" class=" p-3 border-0 d-flex justify-content-center align-items-center">Si</td>
+            <td style="max-width:150;width:100%;" height="100" *ngIf="columna=='Revisado' && !producto.revisado" class=" p-3 border-0 d-flex justify-content-center align-items-center">No</td>
+            <td style="max-width:150;width:100%;" height="100" *ngIf="columna=='Acciones'" class=" p-3 border-0 d-flex justify-content-center align-items-center"><img style="max-width:30px;height:30px;width:100%;" src="../../../../assets/delete.png" id='eliminarButton' type="button" (click)="productoAModal(producto._id)"  data-bs-toggle="modal" data-bs-target="#eliminar" /></td>
+        </tr>
+      </td>
+    </tbody>
+  </table>
+  <mat-paginator #paginator
+  [length]="length"
+  [pageIndex]="pageIndex"
+  [pageSize]="pageSize"
+  [pageSizeOptions]="[5, 10, 20]"
+  (page)="pageEvent = getServerData($event)"aria-label="Select page of users"></mat-paginator>
+
+  <app-modal-eliminar [id_asignacion]="productoIdModal" [tipo]="'productos'" ></app-modal-eliminar>
+  <app-modal-orden [columnas]="columnas" ></app-modal-orden>
