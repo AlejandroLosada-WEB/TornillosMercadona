@@ -71,6 +71,7 @@ export class LoginComponent implements OnInit, OnDestroy {
       .catch( err => {
         this.store.dispatch( ui.stopLoading() );
         Swal.fire({
+          position:'bottom',
           icon: 'error',
           title: 'Oops...',
           text: 'Datos no válidos'

@@ -63,7 +63,10 @@ export class RegisterComponent implements OnInit, OnDestroy {
 
         // Swal.close();
         this.store.dispatch( ui.stopLoading() );
-
+        Swal.fire({
+          icon: 'success',
+          text: 'User registrado'
+        })
         this.router.navigateByUrl("auth/login")
       })
       .catch( err => {
